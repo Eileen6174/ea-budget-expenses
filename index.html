@@ -34,5 +34,5 @@ $("add-income").onclick=()=>openEntry("income");$("add-expense").onclick=()=>ope
 const refreshDashboard = () => document.getElementById("search").dispatchEvent(new Event("input"));
 document.getElementById("month-filter").addEventListener("change", refreshDashboard);
 document.getElementById("all-months").addEventListener("click", () => { document.getElementById("month-filter").value = ""; refreshDashboard(); });
-if ("serviceWorker" in navigator) window.addEventListener("load", () => navigator.serviceWorker.register("./service-worker.js").catch(error => console.error("Offline setup failed.", error)));
+if ("serviceWorker" in navigator) window.addEventListener("load", () => navigator.serviceWorker.register("./service-worker.js?v=3").catch(error => console.error("Offline setup failed.", error)));
 </script></body></html>

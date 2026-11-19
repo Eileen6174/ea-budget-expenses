@@ -1,4 +1,4 @@
-const CACHE = "ea-budget-expenses-v2";
+const CACHE = "ea-budget-expenses-v3";
 const ASSETS = ["./", "./index.html", "./manifest.webmanifest", "./icons/icon.svg", "./icons/icon-192.png", "./icons/icon-512.png", "./icons/apple-touch-icon.png"];
 
 self.addEventListener("install", event => {
@@ -13,6 +13,16 @@ self.addEventListener("activate", event => {
 
 self.addEventListener("fetch", event => {
   if (event.request.method !== "GET") return;
+  if (event.request.mode === "navigate") {
+    event.respondWith(
+      fetch(event.request).then(response => {
+        const copy = response.clone();
+        caches.open(CACHE).then(cache => cache.put("./index.html", copy));
+        return response;
+      }).catch(() => caches.match("./index.html"))
+    );
+    return;
+  }
   event.respondWith(
     caches.match(event.request).then(cached => cached || fetch(event.request).then(response => {
       const copy = response.clone();
