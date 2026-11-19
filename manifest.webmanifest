@@ -1,7 +1,7 @@
 {
-  "name": "Ledgerly Budget & Expenses",
-  "short_name": "Ledgerly",
-  "description": "A simple Malaysian Ringgit budget and expenses tracker.",
+  "name": "EA Budget-Expenses",
+  "short_name": "EA Budget",
+  "description": "EA Budget-Expenses, a simple Ringgit budget and payment tracker.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
