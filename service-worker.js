@@ -1,4 +1,4 @@
-const CACHE = "ea-budget-expenses-v7";
+const CACHE = "ea-budget-expenses-v8";
 const ASSETS = ["./", "./index.html", "./manifest.webmanifest", "./icons/icon.svg", "./icons/icon-192.png", "./icons/icon-512.png", "./icons/apple-touch-icon.png"];
 
 self.addEventListener("install", event => {
